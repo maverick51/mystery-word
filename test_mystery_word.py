@@ -1,3 +1,5 @@
+import unittest
+
 from mystery_word import *
 
 word_list = ["bird", "calf", "river", "stream", "kneecap",  "cookbook",
@@ -31,10 +33,10 @@ def test_display_word():
     word = "integration"
     assert display_word(word, []) == "_ _ _ _ _ _ _ _ _ _ _"
     assert display_word(word, ["z"]) == "_ _ _ _ _ _ _ _ _ _ _"
-    assert display_word(word, ["g"]) == "_ _ _ _ G _ _ _ _ _ _"
-    assert display_word(word, ["i"]) == "I _ _ _ _ _ _ _ I _ _"
-    assert display_word(word, ["i", "g"]) == "I _ _ _ G _ _ _ I _ _"
-    assert display_word(word, ["i", "n", "z"]) == "I N _ _ _ _ _ _ I _ N"
+    assert display_word(word, ["g"]) == "_ _ _ _ g _ _ _ _ _ _"
+    assert display_word(word, ["i"]) == "i _ _ _ _ _ _ _ i _ _"
+    assert display_word(word, ["i", "g"]) == "i _ _ _ g _ _ _ i _ _"
+    assert display_word(word, ["i", "n", "z"]) == "i n _ _ _ _ _ _ i _ n"
 
 
 def test_is_word_complete():
@@ -44,3 +46,8 @@ def test_is_word_complete():
     assert not is_word_complete(word, ["r", "e"])
     assert not is_word_complete(word, ["r", "e", "z"])
     assert is_word_complete(word, ["r", "e", "v", "i"])
+
+test_easy_words()
+test_medium_words()
+test_hard_words()
+test_random_word()
